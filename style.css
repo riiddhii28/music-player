@@ -36,7 +36,7 @@ body{
     cursor: pointer;
 }
   
-.top-bar, .progress-area .song-timer ul li{
+.top-bar, .progress-area .song-timer, .controls, .musiclist .header, .musiclist ul li{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,6 +95,142 @@ body{
     font-size: 15px;
     line-height: 35px;
 }
+  
+.progress-area{
+    height: 6px;
+    width: 100%;
+    border-radius: 50px;
+    background: #17050572;
+    cursor: pointer;
+}
+  
+.progress-area .progress-bar{
+    
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: #ffffff;
+}
+
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    background: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.progress-area .song-timer{
+    margin-top: 2px;
+
+}
+.song-timer span{
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.controls{
+    margin: 70px 0 5px 0;
+}
+  
+.controls i{
+    font-size: 28px;
+    user-select: none;
+    background:#0d0202;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.controls i:nth-child(2), .controls i:nth-child(4){
+  font-size: 43px;
+}
+
+.musiclist{
+    
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 15px 30px;
+    left: 0;
+    background: #ef9df2;
+    border-radius: 15px;
+
+    bottom: -50%; 
+    opacity: 0;
+
+}
+
+.musiclist.show{
+    bottom: 0;
+    opacity: 1;
+    
+}
+
+.musiclist ul li{
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom:  1px solid #e5e5e5;
+}
+
+
+.header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: #515c6f;
+}
+
+  
+.musiclist ul li:hover{
+    color: #0e9fff;
+}
+
+ul li.playing{
+    pointer-events: none;
+    color: #0e9fff;
+}
+
+  
+  
+  
+
+  
+
+
+
+  
+  
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
   
   
   
