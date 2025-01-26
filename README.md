@@ -18,3 +18,7 @@ This project is a Music Player built during my internship at **Coding Raja Techn
 1. Clone the repository:
    ```bash
    git clone https://github.com/riiddhii28/music-player.git
+
+2. Open index.html in your browser.
+
+   
